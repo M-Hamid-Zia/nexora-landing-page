@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Meta information for NEXORA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NEXORA is a web development agency dedicated to crafting clean, efficient, and user-friendly web experiences. Our team of experts specializes in modern web technologies to deliver high-quality solutions tailored to your needs."
+    />
+    <meta
+      name="keywords"
+      content="web development, clean web design, user-friendly websites, modern web technologies, NEXORA"
+    />
+
+    <title>NEXORA | Crafting Clean Web Experiences</title>
+
+    <!-- Css, favicon and Fonts -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image" href="assets/images/NEXORA.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar Section -->
+      <div class="container">
+        <nav class="navbar" aria-label="Main navigation">
+          <a href="#"
+            ><img
+              class="logo-img"
+              src="assets/images/nexora-logo.webp"
+              alt="NEXORA - Home"
+              aria-label="NEXORA logo - return to home page"
+          /></a>
+          <ul class="navbar-menu" role="menubar" aria-label="Main menu">
+            <li class="navbar-item" role="none">
+              <a
+                href="/"
+                class="navbar-link active"
+                role="menuitem"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="navbar-item" role="none">
+              <a href="#services" class="navbar-link" role="menuitem"
+                >Services</a
+              >
+            </li>
+            <li class="navbar-item" role="none">
+              <a href="#about" class="navbar-link" role="menuitem">About</a>
+            </li>
+            <li class="navbar-item" role="none">
+              <a
+                href="#contact"
+                class="navbar-link"
+                role="menuitem"
+                aria-label="Contact us"
+                >Contact</a
+              >
+            </li>
+            <li class="navbar-item" role="none">
+              <a
+                class="btn primary-btn"
+                href="#"
+                role="menuitem"
+                aria-label="View our portfolio"
+                >View Portfolio</a
+              >
+            </li>
+          </ul>
+          <button
+            class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+          <h1 id="hero-heading">Crafting Clean Web Experiences</h1>
+          <p>
+            NEXORA is a web development agency dedicated to creating accessible,
+            efficient, and user-friendly web experiences.
+          </p>
+          <a
+            href="#contact"
+            class="btn primary-btn"
+            aria-label="Get in touch with NEXORA"
+            >Get Started</a
+          >
+        </div>
+      </section>
+
+      <section id="services" aria-labelledby="services-heading">
+        <div class="container">
+          <h2 id="services-heading">Our Services</h2>
+          <p>
+            We specialize in modern web technologies to deliver high-quality
+            solutions tailored to your needs.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <h2 id="about-heading">About NEXORA</h2>
+          <p>
+            Our team of experts is committed to excellence in web development
+            and accessibility.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading">Contact Us</h2>
+          <p>Ready to start your project? Get in touch with our team.</p>
+        </div>
+      </section> -->
+    </main>
+
+    <script>
+      // Mobile menu toggle functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".navbar-menu");
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isExpanded);
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(".navbar-link");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+
+          // Update active class
+          navLinks.forEach((item) => item.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
