@@ -7,11 +7,11 @@
  --text-muted: #6b7280;
   --light-color: #f9fafb;
   --bg-light: #E5E7EB
-  --font-family: "Poppins", "DM Sans", sans-serif;
-  --paragraph-height: 1.6;
+  --font-fami: "Poppins", "DM Sans", sans-serif;
+  --para-height: 1.6;
   --heading-height: 1.2;
   --border-radius: 0.375rem;
-  --primary-font-size: 3.5rem;
+  --primary-font-size: 3.25rem;
   --secondary-font-size: 2rem;
   --sub-title-font-size: 1.25rem;
   --paragraph-font-size: 1rem;
@@ -63,7 +63,6 @@ li{
 
 .btn{
  padding: 0.875rem 1.125em;
-
  display: inline-block;
  text-align: center;
  border-radius: var(--border-radius);
@@ -71,16 +70,21 @@ li{
  cursor: pointer;
 }
 
+.btn:focus {
+ outline: 2px solid var(--primary-color);
+ outline-offset: 2px;
+}
+
 /* ################# */
 /* Style CSS */
 /* ################# */
 
 header{
- position: sticky;
+ position: fixed;
  top: 0;
  right: 0;
  left: 0;
- z-index: 1000;
+ z-index: 100;
 
  background-color: var(--light-color);
 }
@@ -180,7 +184,7 @@ header{
   top: 70px;
   right: -100%;
   flex-direction: column;
-  background-color: var(--bg-light);
+  background-color: var(--light-color);
   width: 80%;
   max-width: 300px;
   height: calc(100vh - 70px);
@@ -245,4 +249,118 @@ header{
  .content h1 {
   font-size: 1.8rem;
  }
+}
+
+
+/* ############# */
+/* Hero Section */
+/* ############# */
+
+.hero-section{
+  padding: 8rem 0;
+  background-color: var(--bg-light);
+}
+
+.hero-container{
+ display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5.75rem;
+  align-items: center;
+
+}
+
+
+.hero-badge{
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 2.25rem;
+}
+
+.hero-title{
+  font-size: var(--primary-font-size);
+  font-weight: 700;
+  font-family: "Poppins", "DM Sans", sans-serif;
+  line-height: var(--heading-height);
+  color: var(--text-dark);
+
+  margin-bottom: 1.25rem;
+}
+
+.hero-title .primary-color{
+color: var(--primary-color);
+}
+
+.hero-title .secondary-color{
+  color: var(--secondary-color);
+}
+
+
+.hero-subtitle{
+  font-size: var(--sub-title-font-size);
+  line-height: var(--para-height);
+  margin-bottom: 2.25rem;
+}
+
+.hero-cta-btns{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.secondary-btn{
+  border: 2px solid var(--secondary-color);
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.secondary-btn:hover{
+  border-color: var(--secondary-shade);
+ color: #fff;
+ background-color: var(--secondary-shade);
+}
+
+.hero-img{
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .hero-section {
+    padding: 6rem 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .hero-cta-btns {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 4.75rem 0 4rem 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
 }
